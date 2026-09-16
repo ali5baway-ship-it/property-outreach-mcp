@@ -75,9 +75,11 @@ function createServer(env: Env) {
 
         const result = await response.text();
 
-        if (!response.ok) {
-          throw new Error(`Apps Script returned HTTP ${response.status}`);
-        }
+       if (!response.ok) {
+  throw new Error(
+    `Apps Script returned HTTP ${response.status}: ${result}`
+  );
+}
 
         return {
           content: [
