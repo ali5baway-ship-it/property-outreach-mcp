@@ -4,6 +4,9 @@
   "compatibility_date": "2026-06-11",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
+  "vars": {
+    "APPS_SCRIPT_URL": "https://script.google.com/macros/s/AKfycbyRdy8zzkWGqSp-2g80VTfyUioFqpSLaFHUDuazEIRk_sMVW337X3NzQpZG19yrAn9mwQ/exec"
+  },
   "assets": {
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/mcp"]
