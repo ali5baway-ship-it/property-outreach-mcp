@@ -36,7 +36,21 @@ function createServer(env: Env) {
     },
     async (data) => {
       try {
-        const response = await fetch(env.APPS_SCRIPT_URL, {
+         if (!env.APPS_SCRIPT_URL) {
+      throw new Error("APPS_SCRIPT_URL is missing from Cloudflare runtime");
+    }
+
+    if (!env.APPS_SCRIPT_SECRET) {
+      throw new Error("APPS_SCRIPT_SECRET is missing from Cloudflare runtime");
+    }
+
+    try {
+      new URL(env.APPS_SCRIPT_URL);
+    } catch {
+      throw new Error("APPS_SCRIPT_URL is not a valid URL");
+    }
+
+    const response = await fetch(env.APPS_SCRIPT_URL, { {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
