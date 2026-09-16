@@ -50,7 +50,7 @@ function createServer(env: Env) {
       throw new Error("APPS_SCRIPT_URL is not a valid URL");
     }
 
-    const response = await fetch(env.APPS_SCRIPT_URL, { {
+    const response = await fetch(env.APPS_SCRIPT_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
