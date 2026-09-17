@@ -56,25 +56,24 @@ function createServer(env: Env) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            secret: env.APPS_SCRIPT_SECRET,
-            country: data.country,
-            state: data.state,
-            cityArea: data.cityArea,
-            propertyType: data.propertyType,
-            propertyName: data.propertyName,
-            email: data.email,
-            emailStatus: data.emailStatus,
-            instagram: data.instagram ?? "Not Found",
+  secret: env.APPS_SCRIPT_SECRET,
+  country: data.country,
+  state: data.state,
+  cityArea: data.cityArea,
+  propertyType: data.propertyType,
+  propertyName: data.propertyName,
+  email: data.email,
+  emailStatus: data.emailStatus,
+  instagram: data.instagram
             instagramLink: data.instagramLink ?? "",
-            reply: data.reply ?? "",
-            replyType: data.replyType ?? "",
-            followUpStatus: data.followUpStatus ?? "Not Contacted",
-            notes: data.notes ?? "",
-          }),
-        });
+reply: data.reply ?? "",
+replyType: data.replyType ?? "",
+followUpStatus: data.followUpStatus ?? "Not Contacted",
+notes: data.notes ?? "",
+}),
+});
 
-        const result = await response.text();
-
+const result = await response.text();
        if (!response.ok) {
   throw new Error(
     `Apps Script returned HTTP ${response.status}: ${result}`
