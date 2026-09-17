@@ -64,7 +64,7 @@ function createServer(env: Env) {
   propertyName: data.propertyName,
   email: data.email,
   emailStatus: data.emailStatus,
-  instagram: data.instagram
+  instagram: data.instagram ?? "Not Found",
             instagramLink: data.instagramLink ?? "",
 reply: data.reply ?? "",
 replyType: data.replyType ?? "",
